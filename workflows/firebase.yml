@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - firebase-hosting-modifications
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run export
+    - uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: '1//05Oh-oeizFirwCgYIARAAGAUSNwF-L9Ir8uFyOOFYOcBcHksnXqYgeqoJZt4wt8bYXDl52C7bq0yyB9EpjX-wHvpwMWPFKsnRwyE'
