@@ -1,0 +1,117 @@
+/* Nav Buttons */
+$red: #ff283a;
+
+$red-palette: (
+  100: #ff283a,
+  /* Primary Red */ 200: #ff5866,
+  300: #ff8a94,
+  400: #ffbec2,
+  500: #ffdde0,
+  600: #fff9fa, /* Lightest Red */ 
+
+  /* Darker Shades Begin */ 
+  700: #c91f2e,
+  800: #951722,
+  900: #6c1119,
+  A100: #38090d,
+  A200: #190406,
+
+  /* Transparent Values */ 
+  A300: #ff283acc,
+  A400: #ff283a81,
+  A500: #ff283a3a
+);
+
+$secondary: #ffed28;
+
+$secondary-palette: (
+  100: #ffed28,
+  200: #fff04b,
+  300: #fff371,
+  400: #fff7a0,
+  500: #fffbd4,
+  600: #fffef6,
+  700: #dfce14,
+  800: #c1b211,
+  900: #7a720b,
+  A100: #484306,
+  A200: #161502,
+  A300: #ffed28cc,
+  A400: #ffed2885,
+  A500: #ffed283a
+);
+
+$secondary-light: #fff79b;
+$secondary-transparent: #ffed2977;
+
+$green: #28ff82;
+
+$green-palette: (
+  100: #28ff82,
+  200: #4aff96,
+  300: #71ffac,
+  400: #97ffbf,
+  500: #c3ffda,
+  600: #effff5,
+  700: #26f47c,
+  800: #1ebd60,
+  900: #158644,
+  A100: #093a1e,
+  A200: #04190d,
+  A300: #28ff82d2,
+  A400: #28ff8281,
+  A500: #28ff823a
+);
+
+$primary: #28a5ff;
+
+$primary-palette: (
+  100: #28a5ff,
+  /* Primary Blue */ 200: #56b8ff,
+  300: #81caff,
+  400: #a3d9ff,
+  500: #d6eeff,
+  600: #f8fcff,
+  700: #2496e8,
+  800: #1c74b4,
+  900: #124c76,
+  A100: #092438,
+  A200: #041019,
+  A300: #28a5ffcc,
+  A400: #28a5ff80,
+  A500: #28a5ff34
+);
+
+$grey: #8696a1;
+
+$grey-palette: (
+  100: #8696a1, /* Tint Values */ 
+  200: #9ca9b2,
+  300: #c8ced4,
+  400: #e2e5e8,
+  500: #6b7881, /* Shade Values */ 
+  600: #464e54,
+  700: #24282c,
+  800: #8696a1e1, /* Transparent Values */ 
+  900: #8696a188,
+  A100: #8696a136
+);
+
+:root {
+  --mdc-theme-primary: map-get($primary-palette, 100);
+  --mdc-theme-secondary: map-get($secondary-palette, 100);
+}
+
+$black: #050400;
+
+$black-transparents: (
+  100: #050400cb,
+  200: #0504008c,
+  300: #0504002f,
+);
+
+$white-transparents: (
+  100: #ffffffd5,
+  200: #ffffff78,
+  300: #ffffff2a,
+)

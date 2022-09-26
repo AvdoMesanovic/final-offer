@@ -1,0 +1,449 @@
+/* Nav Buttons */
+$red: #ff283a;
+
+$red-palette: (
+  100: #ff283a,
+  /* Primary Red */ 200: #ff5866,
+  300: #ff8a94,
+  400: #ffbec2,
+  500: #ffdde0,
+  600: #fff9fa, /* Lightest Red */ 
+
+  /* Darker Shades Begin */ 
+  700: #c91f2e,
+  800: #951722,
+  900: #6c1119,
+  A100: #38090d,
+  A200: #190406,
+
+  /* Transparent Values */ 
+  A300: #ff283acc,
+  A400: #ff283a81,
+  A500: #ff283a3a
+);
+
+$secondary: #ffed28;
+
+$secondary-palette: (
+  100: #ffed28,
+  200: #fff04b,
+  300: #fff371,
+  400: #fff7a0,
+  500: #fffbd4,
+  600: #fffef6,
+  700: #dfce14,
+  800: #c1b211,
+  900: #7a720b,
+  A100: #484306,
+  A200: #161502,
+  A300: #ffed28cc,
+  A400: #ffed2885,
+  A500: #ffed283a
+);
+
+$secondary-light: #fff79b;
+$secondary-transparent: #ffed2977;
+
+$green: #28ff82;
+
+$green-palette: (
+  100: #28ff82,
+  200: #4aff96,
+  300: #71ffac,
+  400: #97ffbf,
+  500: #c3ffda,
+  600: #effff5,
+  700: #26f47c,
+  800: #1ebd60,
+  900: #158644,
+  A100: #093a1e,
+  A200: #04190d,
+  A300: #28ff82d2,
+  A400: #28ff8281,
+  A500: #28ff823a
+);
+
+$primary: #28a5ff;
+
+$primary-palette: (
+  100: #28a5ff, /* Primary Blue */ 
+  200: #56b8ff,
+  300: #81caff,
+  400: #a3d9ff,
+  500: #d6eeff,
+  600: #f8fcff,
+  700: #2496e8,
+  800: #1c74b4,
+  900: #124c76,
+  A100: #092438,
+  A200: #041019,
+  A300: #28a5ffcc,
+  A400: #28a5ff80,
+  A500: #28a5ff34
+);
+
+$grey: #8696a1;
+
+$grey-palette: (
+  100: #8696a1,
+
+  /* Tint Values */ 
+  200: #9ca9b2,
+  300: #c8ced4,
+  400: #e2e5e8,
+
+  500: #6b7881, /* Shade Values */ 
+  600: #464e54,
+  700: #24282c,
+  800: #8696a1e1,
+
+  /* Transparent Values */ 
+  900: #8696a188,
+  A100: #8696a136
+);
+
+@use '@material/theme' as theme with (
+  $primary: map-get($primary-palette, 100),
+  $secondary: map-get($secondary-palette, 100),
+  $error: map-get($red-palette, 700),
+);
+
+@use "@material/typography/mdc-typography";
+
+:root {
+  --mdc-theme-primary: map-get($primary-palette, 100);
+  --mdc-theme-secondary: map-get($secondary-palette, 100);
+  --mdc-theme-on-secondary: map-get($grey-palette, 700);	
+}
+
+$black: #050400;
+
+.heading {
+  word-spacing: 3px;
+  font-weight: 300;
+  padding-left: 10px;
+  color: $primary;
+  width: 100%;
+  padding: 15px;
+  padding-left: 0;
+  border-bottom: 2px $primary dotted;
+}
+
+a.mdc-fab {
+  background-color: $primary;
+}
+
+a.mdc-fab.secondary-color-fab.mdc-ripple-upgraded.mdc-fab--extended {
+  background-color: map-get($secondary-palette, 100);
+  color: map-get($grey-palette, 600);
+} 
+
+/* For Text Input Cursor Color */
+
+.mdc-text-field .mdc-text-field__input {
+  caret-color: $grey;
+}
+
+.mdc-text-field,
+.mdc-text-field__input {
+  color: $primary;
+  margin-bottom: 15px;
+}
+
+/* Helper Text on Text Input Color */
+
+.mdc-floating-label.mdc-text-field--float-above {
+  color: $primary;
+}
+
+.mdc-floating-label,
+.mdc-text-field--focused:not(.mdc-text-field--disabled),
+.mdc-text-field--float-above,
+.mdc-floating-label.mdc-text-field--focused:not(.mdc-text-field--disabled) {
+  color: $primary;
+}
+
+.secondary-color-input,
+.secondary-color-input.mdc-floating-label,
+.secondary-color-input.mdc-text-field--float-above,
+.secondary-color-input.mdc-floating-label.mdc-text-field--focused:not(.mdc-text-field--disabled) {
+  color: map-get($secondary-palette, 100);
+}
+
+/* Icon Button Ripple Effect Color */
+
+.mdc-ripple-surface--accent::before,
+.mdc-ripple-surface--accent::after {
+  background-color: map-get($green-palette, 300);
+}
+@supports not (-ms-ime-align: auto) {
+  .mdc-ripple-surface--accent::before,
+  .mdc-ripple-surface--accent::after {
+    /* @alternate */
+    background-color: map-get($green-palette, 300);
+  }
+}
+
+.mdc-button--raised:not(:disabled),
+.mdc-button--unelevated:not(:disabled) {
+  background-color: map-get($primary-palette, 700);
+}
+
+/* Sign up Button */
+
+.mdc-button.secondary-color-button.mdc-ripple-upgraded.mdc-button--raised.mdc-button--touch {
+  background-color: map-get($secondary-palette, 700);
+}
+
+/* Radio Button */
+
+.mdc-radio {
+  color: $secondary;
+}
+
+.mdc-radio.mdc-radio__ripple:after,
+.mdc-radio.mdc-radio__ripple:before {
+  background-color: map-get($secondary-palette, 300);
+}
+
+.login-heading {
+  background: map-get($secondary-palette, 600);
+}
+
+.mdc-button.center-block.mdc-ripple-upgraded {
+  color: map-get($primary-palette, 600);
+  background-color: map-get($primary-palette, 700);
+}
+
+.mdc-button.mdc-ripple-upgraded.mdc-button--raised {
+  color: map-get($primary-palette, 600);
+}
+
+.mdc-radio .mdc-radio__native-control:enabled:checked + .mdc-radio__background .mdc-radio__outer-circle {
+  border-color: map-get($secondary-palette, 100);
+  color: map-get($secondary-palette, 100);
+  /* @alternate */
+  border-color: map-get($secondary-palette, 100);
+}
+
+.mdc-radio .mdc-radio__native-control:enabled + .mdc-radio__background .mdc-radio__inner-circle {
+  border-color: map-get($secondary-palette, 100);
+  color: map-get($secondary-palette, 100);
+}
+
+.mdc-radio .mdc-radio__background::before {
+  background-color: map-get($secondary-palette, 100);
+}
+@supports not (-ms-ime-align: auto) {
+  .mdc-radio .mdc-radio__background::before {
+    /* @alternate */
+    background-color: map-get($secondary-palette, 100);
+  }
+}
+
+/* Changes Ripple Effect on Buttons from Purple to Blue */
+
+.mdc-button.mdc-button__ripple:after,
+.mdc-button.mdc-button__ripple:before {
+  background-color: map-get($primary-palette, 100);
+}
+
+.mdc-button.mdc-button__ripple::before,
+.mdc-button.mdc-button__ripple::after {
+  background-color: map-get($primary-palette, 100);
+}
+
+@supports not (-ms-ime-align: auto) {
+  .mdc-ripple-surface--primary::before,
+  .mdc-ripple-surface--primary::after {
+    background-color: map-get($primary-palette, 100);
+  }
+}
+
+.mdc-ripple-surface--primary::before,
+.mdc-ripple-surface--primary::after {
+  background-color: map-get($primary-palette, 100);
+}
+@supports not (-ms-ime-align: auto) {
+  .mdc-ripple-surface--primary::before,
+  .mdc-ripple-surface--primary::after {
+    background-color: map-get($primary-palette, 100);
+  }
+}
+
+/* Text Field Stuff */
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: map-get($primary-palette, 100);
+}
+
+.custom-file-upload {
+  color: map-get($primary-palette, 600);
+}
+
+.custom-file-upload {
+  color: map-get($primary-palette, A400);
+}
+
+/* Price Test Styles */
+
+.dollar-sign {
+  color: map-get($primary-palette, A100);
+}
+
+.price-text {
+  color: map-get($primary-palette, 900);
+}
+
+.grey-thin-text {
+  color: map-get($grey-palette, 600);
+}
+
+/* Icon Buttons */
+
+.material-icons.accept {
+  color: $green;
+}
+
+.material-icons.decline {
+  color: $red;
+}
+
+.accept {
+  color: $green;
+}
+
+.decline {
+  color: $red;
+}
+
+.mdc-icon-button.material-icons.west-point-arrow {
+  color: map-get($primary-palette, 700);
+}
+
+/* Primary Color Buttons */
+.mdc-button:not(:disabled) {
+  color: map-get($primary-palette, 100);
+  border-color: map-get($primary-palette, 100);
+}
+
+/* Secondary Color Buttons (Raised) */
+
+.smui-button--color-secondary {
+  background-color: map-get($secondary-palette, 100);
+  color: map-get($grey-palette, 600);
+}
+
+.smui-button--color-secondary.mdc-button:not(:disabled) {
+  border-color: map-get($secondary-palette, 100);
+  color: map-get($secondary-palette, 100);
+}
+
+.mdc-button.mdc-ripple-upgraded.mdc-button--raised.smui-button--color-secondary.mdc-button--touch {
+  background-color: map-get($secondary-palette, 100);
+  color: map-get($grey-palette, 600);
+}
+
+.smui-button--color-secondary:after, .smui-button--color-secondary:before {
+  background-color: map-get($secondary-palette, 100);
+  color: map-get($grey-palette, 600);
+}
+
+.smui-button--color-secondary:after, .smui-button--color-secondary:before {
+  background-color: map-get($secondary-palette, 100);
+  color: map-get($grey-palette, 600);
+}
+
+.smui-button--color-secondary:after, .smui-button--color-secondary:before {
+  background-color: map-get($secondary-palette, 100);
+  color: map-get($grey-palette, 600);
+}
+
+.smui-button--color-secondary:after, .smui-button--color-secondary:before {
+  background-color: map-get($secondary-palette, 100);
+  color: map-get($grey-palette, 600);
+}
+
+.blue-background {
+  background-color: map-get($primary-palette, 600);
+  height: 100%;
+}
+
+.yellow-background {
+  background-color: map-get($secondary-palette, 600);
+  height: 100%;
+}
+
+.mdc-text-field__input {
+  width: 265px;
+}
+
+@media only screen and (max-width: 360px) {
+  .mdc-text-field__input {
+    width: 220px;
+  }
+}
+
+/* triangle arrows on offer id cards */
+
+.material-icons.right-arrow {
+  color: map-get($primary-palette, 600);
+}
+
+.material-icons.left-arrow {
+  color: map-get($primary-palette, 600);
+}
+
+/* Circular Progress */
+
+.mdc-circular-progress__determinate-circle, .mdc-circular-progress__indeterminate-circle-graphic {
+  stroke: map-get($primary-palette, 100);
+}
+
+/* Nav Mobile Menu */
+.nav-menu {
+  right: 0px;
+}
+    
+.qr-print-div {
+  width: 30%;
+  border: dashed 1px $grey;
+  margin: 0;
+}
+
+.qr-print-div img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 5px;
+  display: block;
+  border: solid 4px $primary;
+}
+  
+.qr-print-indiv img {
+  border: solid 4px $primary;
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  display: block;
+}
+
+// .mdc-tab--active .mdc-tab__text-label, .mdc-tab {
+//   color: map-get($primary-palette, 100);
+// }
+
+// .mdc-tab__text-label {
+//   color: map-get($primary-palette, 300);
+// }
+
+button:disabled .mdc-tab__text-label {
+  color: map-get($grey-palette, 200);
+}
+
+.mdc-tab-indicator__content {
+  border-color: $primary;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
+  background-color: map-get($primary-palette, 100);
+}
