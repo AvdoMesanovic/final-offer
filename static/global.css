@@ -1,0 +1,377 @@
+body {
+  font-family: Roboto!important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh;
+} 
+
+#sapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Main Container with FLEX DO NOT REMOVE */
+
+@import '../theme/variables.scss';
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.flex-layout {
+  list-style: none;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  /* flex-flow is shorthand for flex-direction and flex-wrap */
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+.flex-item {
+  -webkit-flex: auto;
+  -moz-flex: auto;
+  flex: auto;
+  width: 100%;
+  margin: 10px 20px 10px 0px;
+
+  /* Center numbers for the hell of it: anonymous boxes become flex items, btw! */
+
+  /* Make each LI a flex container! */
+  align-items: top; /* Cross axis (vertical in this case) */
+}
+
+.fixed-width-column {
+  width: 300px;
+  flex: 0 0 300px;
+}
+
+.large-fixed-width-column {
+  width: 600px;
+  flex: 0 0 600px;
+}
+
+@media only screen and (min-width: 40em) {
+  .flex-item {
+    width: 48%;
+  }
+}
+
+@media only screen and (min-width: 50em) {
+  .flex-item {
+    width: 31%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .flex-item {
+    width: 23%;
+  }
+}
+
+@media only screen and (min-width: 80em) {
+  .flex-item {
+    width: 18%;
+  }
+}
+
+/* End of Main Container with FLEX DO NOT REMOVE */
+
+#footer {
+  bottom: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pull-right {
+  float: right;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+img {
+  margin: 0;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 2% 0;
+}
+
+.flex-container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.flex-container {
+  flex-direction: row;
+}
+
+.flex-item2 {
+  padding: 5px;
+  margin-top: 10px;
+  margin: 5px;
+}
+
+.flex-item2.center {
+  flex-grow: 2;
+  min-width: 350px;
+}
+
+.flex-item2.left,
+.flex-item2.right {
+  /* flex-shrink: 1; */
+  /* min-width: 250px; */
+}
+
+/* Tablet Media Quiry */
+
+@media only screen and (max-width: 1030px) {
+  .flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .flex-item2.center {
+    flex-grow: 3;
+    order: 1;
+  }
+
+  .flex-item2.left,
+  .flex-item2.right {
+    order: 2;
+    flex-grow: 1;
+  }
+}
+
+/* Mobile Media Quiry */
+
+@media only screen and (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-item2.center {
+    flex-grow: 0;
+    order: 1;
+    /* width: 95%; */
+  }
+
+  .flex-item2.left,
+  .flex-item2.right {
+    min-width: auto;
+    order: 2;
+    /* width: auto; */
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mdc-card {
+  margin-bottom: 10px !important;
+}
+
+.mdc-top-app-bar {
+  background-color: white !important;
+}
+
+a.mdc-fab {
+  margin-right: 5px !important;
+}
+
+/* added css for offer */
+.grey-thin-text {
+  word-spacing: 3px;
+  font-weight: 300;
+  color: #595f5f;
+  width: 100%;
+  padding: 15px;
+}
+
+.mdc-data-table__row:not(.mdc-data-table__row--selected):hover {
+  cursor: pointer;
+}
+
+.dollar-sign {
+  padding: auto 0;
+  font-weight: 250;
+  color: #293d3d;
+  padding-right: 5px;
+  font-size: 23px;
+}
+
+.material-icons {
+  margin: 5px;
+}
+
+.material-icons.accept {
+  color: rgb(14, 187, 86);
+}
+
+.material-icons.decline {
+  color: rgb(206, 0, 0);
+}
+
+/* css for offer id cards */
+
+.material-icons.right-arrow, .material-icons.left-arrow {
+  position: relative;
+  color: white;
+  bottom: 81px;
+  z-index: 10;
+}
+
+.material-icons.right-arrow {
+  float: right;
+}
+
+.big-progress-circle {
+  height: 100px;
+  width: 100px;
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 300px) {
+  .material-icons.left-arrow,
+  .material-icons.right-arrow {
+    bottom: 47px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 300px) {
+  .material-icons.left-arrow,
+  .material-icons.right-arrow {
+    bottom: 50px;
+  }
+}
+
+@media (min-width: 500px) {
+  .material-icons.left-arrow,
+  .material-icons.right-arrow {
+    bottom: 64px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  .material-icons.left-arrow,
+  .material-icons.right-arrow {
+    bottom: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  .material-icons.left-arrow,
+  .material-icons.right-arrow {
+    bottom: 81px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.no-display {
+  display: none;
+}
+
+.centered-component img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-list-style {
+  list-style: none;
+}
+
+/* This class allows text to be unselectable */
+.disable-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.print-text-margin {
+  margin: 10px 0;
+}
+
+.qr-indiv {
+  width: 140px;
+}
+
+.qr-cont-indiv {
+  margin: 20px auto;
+  display: flex;
+  flex-flow: row wrap;
+  width: 500px;
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid.half-split {
+  grid-template-columns: 1fr 1fr
+}
